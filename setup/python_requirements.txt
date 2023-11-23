@@ -8,8 +8,15 @@ torch==2.1.0
 sentencepiece==0.1.99
 tokenizers==0.14.1
 datasets==2.14.6
+accelerate==0.24.1
 transformers==4.35.0
+simpletransformers==0.64.3
 easyNMT==2.0.0
+sacremoses==0.1.1
+google-cloud-translate==3.12.1
+deepl==1.16.1
 sentence-transformers==2.2.2
 umap-learn==0.5.4
 bertopic==0.15.0
+ipykernel==6.27.0
+ipywidgets==8.1.1

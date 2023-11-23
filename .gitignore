@@ -2,6 +2,11 @@
 .DS_Store
 todos.md
 
+## files
+
+notebooks/
+data/lehmann+zobel_2018_labeled_manifestos.tsv
+
 ## Python
 
 # Byte-compiled / optimized / DLL files
