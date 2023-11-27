@@ -8,7 +8,7 @@ But it should be enough to review one or two links per concept –- *no need* to
 	- [Wikipedia](https://en.wikipedia.org/wiki/Evaluation_of_binary_classifiers)
 	- [ChatGPT](https://chat.openai.com/share/13335f1d-8916-46f1-aa2b-ce4ddeb22df0)
 	- [kaggle](https://www.kaggle.com/code/leeyj0511/model-evaluation-1-classification-metrics)
-	- [Medium](8https://medium.com/@impythonprogrammer/evaluation-metrics-for-classification-fc770511052d)
+	- [Medium](https://medium.com/@impythonprogrammer/evaluation-metrics-for-classification-fc770511052d)
 	- [Towards Data Science](https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226)
 - train/dev/test splitting
 	- [Wikipedia](https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets)
