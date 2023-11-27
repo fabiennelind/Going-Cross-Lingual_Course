@@ -56,7 +56,7 @@ Download the Installer from https://www.anaconda.com/download#macos
 
 *Notes:* 
 
-- If your computer has an M1/M2 chip, choose "Download for Mac (M1/M2)". Otherwise, choose "Download for Mac (Intel)"
+- If your computer has an M1/M2 chip (see [here](https://support.apple.com/en-us/HT211814)), choose "Download for Mac (M1/M2)". Otherwise, choose "Download for Mac (Intel)"
 - If you *don't know* whether your Mac has an M1 or M2 chip (a.k.a "Apple Silicon"), follow these instructions to find out: https://www.howtogeek.com/706226/how-to-check-if-your-mac-is-using-an-intel-or-apple-silicon-processor
 
 With the installer downloaded, the following two links provide detailed follow-up instructions: 
@@ -64,7 +64,7 @@ With the installer downloaded, the following two links provide detailed follow-u
 - https://www.datacamp.com/tutorial/installing-anaconda-mac-os-x
 - https://docs.anaconda.com/free/anaconda/install/mac-os/
 
-**_Important note:_** When asked to select the destination of the installation (step 4 in the second link), please choose "Install for me only" (e.g., use your Application folder)
+**_Important:_** When asked to select the destination of the installation (step 4 in the second link), please choose "Install for me only" (e.g., use your Application folder)
 
 ### 2. Verify your Anaconda installation
 
@@ -85,8 +85,8 @@ Then, follow the instructions [here](https://docs.anaconda.com/free/navigator/tu
 
 #### Using the command line
 
-- on Windows: Open the Anaconda Prompt
-- on macOS: Open the Terminal app
+- on Windows: Open the *Anaconda Prompt*
+- on macOS: Open the *Terminal* app
 
 To create a new conda environment, run the following lines
 
@@ -96,15 +96,16 @@ conda create --name multilingual python=3.10 pip
 conda activate multilingual
 ```
 
-*Notes:* 
+**_Important:_** If you are using a Mac and your Mac has an Apple silicon (ARM) prcessor (M1 or M2 chip, see [here](https://support.apple.com/en-us/HT211814)), use `CONDA_SUBDIR=osx-arm64 conda` instead of conda above to allow `torch` etc. access to these processors ([source](https://towardsdatascience.com/python-conda-environments-for-both-arm64-and-x86-64-on-m1-apple-silicon-147b943ffa55))
 
 - The part after `--name` is the name of the environment. So our new environment is called 'multilingual'
 - `python=3.10` specifies that we want to use python version 3.10 in this environment
 - `pip` specifies that we want to pre-install pip
 
+
 ### 4. Install required pacakages
 
-In the Anaconda Prompt (Windows)/Terminal (macOS),
+In the *Anaconda Prompt* (Windows)/the *Terminal* app (macOS),
 
 1. run `conda install notebook` to install Jupyter Notebooks
 2. run `pip install -r https://raw.githubusercontent.com/fabiennelind/Going-Cross-Lingual_Course/main/setup/python_requirements.txt` to install all package dependencies
