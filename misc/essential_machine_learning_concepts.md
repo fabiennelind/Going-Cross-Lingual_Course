@@ -1,7 +1,7 @@
 # Essential machine learning concepts
 
 In the course, we will rely on a number of classic machine learning and NLP concepts.
-We have listed a number of links for each concept
+We have listed a number of links for each concept.
 But it should be enough to review one or two links per concept –- *no need* to read it all!
 
 - *evaluation metrics*
