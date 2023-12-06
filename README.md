@@ -16,3 +16,7 @@ The [setup/](./setup) folder of this repository contains all materials needed fo
 ## Questions and issues
 
 If you have a question or encounter any issues, email the course instructors (via `hauke.licht [at] wiso [dot] uni-koeln [dot] de` and `fabienne [dot] lind [at] univie [dot] ac [dot] at`) or [post an issue](https://github.com/fabiennelind/Going-Cross-Lingual_Course/issues) or .
+
+coder 2 https://docs.google.com/spreadsheets/d/1UZE_jdte6YMrWRG4jYERJa2SIdqztJgz8xk9xmiLEiE/edit?usp=sharing
+
+coder 1 https://docs.google.com/spreadsheets/d/1EaIb1DDSUD-Co2w7ogedPeeF5LfVXbVE2aV5GDyawCQ/edit?usp=sharing
