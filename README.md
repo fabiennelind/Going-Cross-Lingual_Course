@@ -20,3 +20,6 @@ If you have a question or encounter any issues, email the course instructors (vi
 coder 2 https://docs.google.com/spreadsheets/d/1UZE_jdte6YMrWRG4jYERJa2SIdqztJgz8xk9xmiLEiE/edit?usp=sharing
 
 coder 1 https://docs.google.com/spreadsheets/d/1EaIb1DDSUD-Co2w7ogedPeeF5LfVXbVE2aV5GDyawCQ/edit?usp=sharing
+
+
+Manual baseline: https://docs.google.com/spreadsheets/d/1J2LIV8yh30uKYgt_ai8sQ_8tkRKVrsyWtbFhLwrSMPg/edit?usp=sharing
