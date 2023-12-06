@@ -23,6 +23,6 @@ deepl==1.16.1
 sentence-transformers==2.2.2
 umap-learn==0.5.4
 bertopic==0.15.0
-nbformat==-5.9.2
+nbformat==5.9.2
 ipykernel==6.27.0
 ipywidgets==8.1.1
