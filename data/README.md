@@ -6,11 +6,9 @@
 
 ## Coded party manifesto sentences
 
-the file '
-
-The labeled manifesto data stems from the [MARPOR](https://manifesto-project.wzb.eu/) project, 
-has been enriched with machine translations by Düpont and Rachuj ([2021](https://doi.org/10.1017/S0007123420000617)), 
-and has been cleaned, harmonized, and analyzed by Licht (2023).
+The tab-seperated file 'dupont+rachuj_2021_coded_manifesto_sentences.tsv' contains labeled manifesto sentences stemming from the [MARPOR](https://manifesto-project.wzb.eu/) project
+which have been enriched with machine translations by Düpont and Rachuj ([2021](https://doi.org/10.1017/S0007123420000617))
+and cleaned, harmonized, and analyzed by Licht ([2023](https://doi.org/10.1017/pan.2022.29)).
 
 Sentences are labeled on two dimensions:
 
@@ -20,7 +18,7 @@ Sentences are labeled on two dimensions:
 
 ## Immigration/integration issue mentions and position in party manifestos
 
-the files 
+The files 
 
 - 'lehmann+zobel_2018_labeled_manifestos.tsv'
 - 'lehmann+zobel_2018_pimpo_positions.tsv'
@@ -44,8 +42,8 @@ The data in folder ruedin_and_morales_2019/ records data taken from the replicat
 
 - 'ruedin_and_morales_2019/parties.tsv': tab-separated file tabulating party abbreviations used in their data 
 - 'ruedin_and_morales_2019/party_codes.tsv': tab-separated file mapping party abbreviations used in their data to [CHES](https://www.chesdata.eu/) party IDs
-- 'ruedin_and_morales_2019/ruedin_and_morales_2019_manifest_sections.csv': raw text of party manifesto sections about integration/immigration
-- 'ruedin_and_morales_2019/ruedin_and_morales_2019_manifest_section_sentences.csv': raw text of party manifesto sections about integration/immigration splitted into *natural* sentences
+- 'ruedin_and_morales_2019/ruedin_and_morales_2019_manifest_sections.csv': comma-separated file with raw text of party manifesto sections about integration/immigration
+- 'ruedin_and_morales_2019/ruedin_and_morales_2019_manifest_section_sentences.csv': comma-separated file with text of party manifesto sections about integration/immigration splitted into *natural* sentences
 
 ## European election candidate tweets
 
