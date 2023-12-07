@@ -83,6 +83,32 @@ translation_prize_case
 DeepL offers the [DeepL API Free](https://www.deepl.com/en/docs-api/) which allows a maximum of 500,000 characters/month to be translated for free. To use the API, it is necessary to create an account and provide your credit card details. After creating an account you will receive an Authentication Key (You find it your DeepL account settings). With [deeplr](https://github.com/zumbov2/deeplr) [(Zumbach & Bauer, 2021)](https://CRAN.R-project.org/package=deeplr), a new wrapper for the DeepL API it is easily possible to work with it from R. 
 
 
+Put your API key in the quotes below: 
+
+```{r}
+my_key <- "put_your_API_key_here"
+```
+
+The much saver option however (recommended!) is to save an API key in the R environment. This way you do not share it directly in your script
+
+How to do this: 
+1. Set the environment variable. You need to do this only once. You can delete this line from your script later on.
+
+
+```{r}
+#Sys.setenv(GPT_API_KEY = "put_your_API_key_here")
+```
+
+2. Access the environment variable in your script. After storing the API key in your environment you can from now on call it with the following function.
+
+```{r}
+my_key <- Sys.getenv("GPT_API_KEY")
+```
+
+
+
+
+
 ```{r}
 #install.packages("deeplr")
 library(deeplr)
