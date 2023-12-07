@@ -28,3 +28,9 @@ coder 1 https://docs.google.com/spreadsheets/d/1EaIb1DDSUD-Co2w7ogedPeeF5LfVXbVE
 
 
 Manual baseline: https://docs.google.com/spreadsheets/d/1J2LIV8yh30uKYgt_ai8sQ_8tkRKVrsyWtbFhLwrSMPg/edit?usp=sharing
+
+## Assignment
+
+Individual consultations on your projects: 
+https://docs.google.com/document/d/1d6iiFnKEMM5QEBkVcX0WsVYlbMt6v07I-MhNnWXXgzY/edit?usp=sharing
+
