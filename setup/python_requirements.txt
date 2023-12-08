@@ -7,6 +7,7 @@ chardet==5.2.0
 iso639==0.1.4
 nltk==3.8.1
 stanza==1.6.1
+transliterate==1.10.2
 gensim==4.3.2
 pycld2==0.41
 lingua-language-detector==2.0.1
