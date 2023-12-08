@@ -1,0 +1,204 @@
+---
+title: "GPT_prompting.Rdm"
+author: "Fabienne Lind"
+date: "2023_11-21"
+output: html_document
+---
+
+Note: The following code was adapted by this blog post: https://rpubs.com/nirmal/setting_chat_gpt_R. 
+and by the script shared as part of the supplementary materials of the following paper: 
+Rathje, S., Mirea, D., Sucholutsky, I., Marjieh, R., Robertson, C., & Van Bavel, J. J. (2023, May 19). GPT is an effective tool for multilingual psychological text analysis. https://doi.org/10.31234/osf.io/sekf5
+The script is explained in this video: https://www.youtube.com/watch?v=Mm3uoK4Fogc
+
+
+
+### Install Required Packages
+
+```{r}
+library(httr)
+library(tidyverse)
+```
+
+
+# Get API key
+
+The first thing to to is to get a ChatGPT API key from here: https://platform.openai.com/overview 
+
+Then, you could put your API key in the quotes below: 
+
+```{r}
+my_API <- "put_your_API_key_here"
+
+```
+
+The much saver option however (recommended!) is to save an API key in the R environment. This way you do not share it directly in your script
+
+How to do this: 
+1. Set the environment variable. You need to do this only once. You can delete this line from your script later on.
+
+
+```{r}
+#Sys.setenv(GPT_API_KEY = "put_your_API_key_here")
+
+```
+
+2. Access the environment variable in your script. After storing the API key in your environment you can from now on call it with the following function.
+
+```{r}
+my_API <- Sys.getenv("GPT_API_KEY")
+
+```
+
+# GPT prompting
+
+The "hey_chatGPT function will help you access the API and prompt GPT 
+
+```{r}
+hey_chatGPT <- function(answer_my_question) {
+  chat_GPT_answer <- POST(
+    url = "https://api.openai.com/v1/chat/completions",
+    add_headers(Authorization = paste("Bearer", my_API)),
+    content_type_json(),
+    encode = "json",
+    body = list(
+      model = "gpt-3.5-turbo-0301",
+      temperature = 0,
+      messages = list(
+        list(
+          role = "user",
+          content = answer_my_question
+        )
+      )
+    )
+  )
+  print(chat_GPT_answer)
+  str_trim(content(chat_GPT_answer)$choices[[1]]$message$content)
+}
+
+```
+
+
+# Read in the dataset with the text column
+
+We work here with the climate news dataset that we manually coded yesterday.
+
+
+```{r}
+
+data <- read.csv("https://raw.githubusercontent.com/fabiennelind/Going-Cross-Lingual_Course/main/data/climate_news_manual_set.csv")
+library(data.table)
+
+```
+
+We select only the shorter texts
+
+```{r}
+data <- data %>%
+  mutate(token_count = str_count(text, "\\S+"))
+data_sub <- subset(data,token_count <= 800)
+
+```
+
+
+As the data at the moment includes first the data sorted by news outlet, we want to shuffle it first.
+Using the OpenAPI costs something.
+To not overburden the budget, we just test our code with a small subset of the data.
+
+
+```{r}
+set.seed(5247)
+rows <- sample(nrow(data_sub))
+data_shuffled <- data_sub[rows, ]
+data_sub <- data_shuffled[1:10,]
+```
+
+
+
+Let's briefly inspect the text column.
+
+```{r}
+data_sub$headline_text <- paste(data_sub$Headline, data_sub$text, sep = ". ")
+
+```
+
+# Create a "gpt" column
+
+We now add a new column to the dataframe. At the moment we just assign NAs. Out goal is now to fill this column with numbers that represent the assessment of gpt.
+
+```{r}
+data_sub$answer_gpt <- NA
+
+```
+
+# Run a loop over your dataset and prompt ChatGPT 
+
+The following loop includes a prompt for climate activism. We allow two classes at the moment Yes and No.
+
+
+Note: In case you plan to use this for other data, replace `data_sub` with the name of your dataframe and make sure that this line of code `text <- data_sub[i,11]` assigns the column where your text (headline_text) is stored to the object text. 
+
+```{r}
+
+for (i in 1:nrow(data_sub)) {
+  print(i)
+  question <- "Is this text about climate activism? Answer only with a number: 1 if Yes and 0 if No. Here is the text:"
+  text <- data_sub[i,12]       
+  concat <- paste(question, text)
+  result <- hey_chatGPT(concat)
+  print(result)
+  data_sub$answer_gpt[i] <- result
+}
+
+```
+
+For the document 7, the code breaks. The error message we get is: 
+"error": {
+    "message": "This model's maximum context length is 4097 toke...
+    "type": "invalid_request_error",
+    "param": "messages",
+    "code": "context_length_exceeded"
+
+Thus, the text that we feed can not be to long.
+
+
+
+
+
+
+#Take only the first string from gpt and convert to a numeric 
+
+```{r}
+
+#data_sub$answer_gpt <- substr(data_sub$answer_gpt, 1, 1)  
+data_sub$answer_gpt <- as.numeric(data_sub$answer_gpt)
+
+```
+
+#Save the result
+
+```{r}
+setwd("/Users/fabiennelind/ucloud/Lehre/Multilingual Text Analysis/case study climate activism/data")
+write.csv(data_sub, "climate_news_manual_set_gpt.csv", row.names = F)
+#data_sub <- fread("climate_news_manual_set_gpt.csv")
+```
+
+
+#Comparison of manual coding decision with GPT proposal
+
+We now inspect how well the manual annotations (that we created jointly) match up with the gpt annotations (column answer_gpt). Both columns have to be numeric.
+
+
+```{r}
+data_sub$climate_activism_m <- as.numeric(data_sub$climate_activism_m)
+class(data_sub$climate_activism_m)
+
+```
+
+
+
+## Compare automated with manual classifications 
+
+We compare the automated classification (in column `gpt_answer`) with the manual classifications (in column `climate_activism_m`) we use three metrics: Recall, Precision, and F1. 
+
+
+
