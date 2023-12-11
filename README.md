@@ -15,22 +15,4 @@ The [setup/](./setup) folder of this repository contains all materials needed fo
 
 ## Questions and issues
 
-If you have a question or encounter any issues, email the course instructors (via `hauke.licht [at] wiso [dot] uni-koeln [dot] de` and `fabienne [dot] lind [at] univie [dot] ac [dot] at`) or [post an issue](https://github.com/fabiennelind/Going-Cross-Lingual_Course/issues) or .
-
-
-## Task Manual Baseline Creation
- 
- To create a baseline, we annotated the following data files together as illustration: 
-
-coder 2 https://docs.google.com/spreadsheets/d/1UZE_jdte6YMrWRG4jYERJa2SIdqztJgz8xk9xmiLEiE/edit?usp=sharing
-
-coder 1 https://docs.google.com/spreadsheets/d/1EaIb1DDSUD-Co2w7ogedPeeF5LfVXbVE2aV5GDyawCQ/edit?usp=sharing
-
-
-Manual baseline: https://docs.google.com/spreadsheets/d/1J2LIV8yh30uKYgt_ai8sQ_8tkRKVrsyWtbFhLwrSMPg/edit?usp=sharing
-
-## Assignment
-
-Individual consultations on your projects: 
-https://docs.google.com/document/d/1d6iiFnKEMM5QEBkVcX0WsVYlbMt6v07I-MhNnWXXgzY/edit?usp=sharing
-
+If you have a question or encounter any issues, email the course instructors (via `hauke.licht [at] wiso [dot] uni-koeln [dot] de` and `fabienne [dot] lind [at] univie [dot] ac [dot] at`) or [post an issue](https://github.com/fabiennelind/Going-Cross-Lingual_Course/issues).
