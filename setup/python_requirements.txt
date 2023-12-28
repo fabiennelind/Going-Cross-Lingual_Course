@@ -16,7 +16,7 @@ sentencepiece==0.1.99
 tokenizers==0.14.1
 datasets==2.14.6
 accelerate==0.24.1
-transformers==4.35.0
+transformers==4.36.0
 easyNMT==2.0.0
 sacremoses==0.1.1
 google-cloud-translate==3.12.1
